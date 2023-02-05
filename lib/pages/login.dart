@@ -15,9 +15,9 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: const BoxDecoration(color: Color(0xFFFBFBFB)),
         padding: const EdgeInsets.only(right: 25, left: 25, top: 109, bottom: 74),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: const <Widget>[
             Text(
               'Assalamualaikum 🙌',
               style: TextStyle(
