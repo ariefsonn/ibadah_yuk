@@ -62,6 +62,10 @@ flutter:
   assets:
     - assets/icons/apple.png
     - assets/icons/google.png
+    - assets/images/profile-bi-img.png
+    - assets/icons/brain.png
+    - assets/icons/book.png
+    - assets/icons/submissions.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

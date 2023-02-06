@@ -21,7 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  <Widget>[
-            Text(
+            const Text(
               'Assalamualaikum 🙌',
               style: TextStyle(
                 fontFamily: 'Euclid Circular B',
@@ -30,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 color: Color(0xFF7C7B7B),
               ),
             ),
-            Text(
+            const Text(
               'Selamat datang di',
               style: TextStyle(
                 color: Color(0xFF322F2F),
@@ -39,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 fontStyle: FontStyle.normal,
               ),
             ),
-            GradientText(
+            const GradientText(
               text: 'ibadahyuk',
               gradient: LinearGradient(colors: [
                 Color(0xFF5B7744),
@@ -52,21 +52,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-SizedBox(
+            const SizedBox(
   height: 30,
 ),
-            Text('Buat akun',
+            const Text('Buat akun',
             style: TextStyle(fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.normal,
                 fontSize: 16 ,
                 color: Color(0xFF969090),
                 fontFamily: 'Euclid Circular B'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-
-            Text('Email',
+            const Text('Email',
               style: TextStyle(
                 fontSize: 16,
                 fontFamily: 'Euclid Circular B',
@@ -74,16 +73,16 @@ SizedBox(
                 color: Colors.black
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-         InputForm(
-           icon: Icon(Icons.alternate_email_outlined, color: Color(0xFF575DFB),),
-         ),
-            SizedBox(
+            const InputForm(
+              icon: Icon(Icons.alternate_email_outlined, color: Color(0xFF575DFB),),
+            ),
+            const SizedBox(
               height: 20,
             ),
-            Text('Username',
+            const Text('Username',
               style: TextStyle(
                   fontSize: 16,
                   fontFamily: 'Euclid Circular B',
@@ -91,10 +90,10 @@ SizedBox(
                   color: Colors.black
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-           InputForm(
+            InputForm(
              icon: Padding(
                padding: const EdgeInsets.all(10.0),
                child: Image.asset(
@@ -105,10 +104,10 @@ SizedBox(
                ),
              ),
            ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Password',
+            const Text('Password',
               style: TextStyle(
                   fontSize: 16,
                   fontFamily: 'Euclid Circular B',
@@ -116,17 +115,17 @@ SizedBox(
                   color: Colors.black
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-         InputForm(
-           icon: Icon(Icons.alternate_email_outlined, color: Color(0xFF575DFB),),
-         ),
-            SizedBox(
+            const InputForm(
+              icon: Icon(Icons.alternate_email_outlined, color: Color(0xFF575DFB),),
+            ),
+            const SizedBox(
               height: 20,
             ),
-           SignUp(text: 'Sign Up'),
-            SizedBox(
+            const SignUp(text: 'Sign Up'),
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -154,7 +153,6 @@ SizedBox(
 
               ],
             ),
-
           ],
         ),
       ),
