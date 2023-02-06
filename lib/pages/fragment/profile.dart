@@ -167,7 +167,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             const SizedBox(height: 12),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 30, right: 33),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
