@@ -28,7 +28,7 @@ class _ProgressPageState extends State<ProgressPage> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(color: Color(0xFFFBFBFB)),
-        padding: const EdgeInsets.only(right: 25, left: 25, top: 20, bottom: 74),
+        padding: const EdgeInsets.only(right: 25, left: 25, top: 45, bottom: 74),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -78,7 +78,7 @@ Row(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                    image: AssetImage("assets/image/back2.png"),
+                    image: AssetImage("assets/images/back2.png"),
                     fit: BoxFit.fill,
                   )
               ),
@@ -174,7 +174,7 @@ Row(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
-                image: AssetImage("assets/image/back1.png"),
+                image: AssetImage("assets/images/back1.png"),
                 fit: BoxFit.fill,
               )
           ),

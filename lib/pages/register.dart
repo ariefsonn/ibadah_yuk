@@ -97,7 +97,7 @@ class _RegisterPageState extends State<RegisterPage> {
              icon: Padding(
                padding: const EdgeInsets.all(10.0),
                child: Image.asset(
-                 'assets/image/user.png',
+                 'assets/images/user.png',
                  width: 1,
                  height: 25,
                  fit: BoxFit.fill,
@@ -119,7 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 10,
             ),
             const InputForm(
-              icon: Icon(Icons.alternate_email_outlined, color: Color(0xFF575DFB),),
+              icon: Icon(Icons.lock_outline_rounded, color: Color(0xFF575DFB),),
             ),
             const SizedBox(
               height: 20,

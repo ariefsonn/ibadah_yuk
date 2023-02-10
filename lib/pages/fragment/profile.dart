@@ -161,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   LinearProgressIndicator(
                     backgroundColor: Color(0xFFD9D9D9),
                     valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF9FB131)),
-                    value: 0.9,
+                    value: 90 / 100,
                   ),
                 ],
               ),

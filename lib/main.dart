@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ibadah_yuk/pages/fragment/home.dart';
+import 'package:ibadah_yuk/pages/fragment/profile.dart';
+import 'package:ibadah_yuk/pages/fragment/progress.dart';
+import 'package:ibadah_yuk/pages/fragment/quran.dart';
 import 'package:ibadah_yuk/pages/login.dart';
 import 'package:ibadah_yuk/pages/register.dart';
 
@@ -14,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: ProgressPage(),
+      home: ProfilePage(),
     );
   }
 }

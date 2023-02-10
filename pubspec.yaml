@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.6-200.0.dev <4.0.0'
+  sdk: '>=3.0.0-200.0.dev <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -65,14 +65,18 @@ flutter:
   assets:
     - assets/icons/apple.png
     - assets/icons/google.png
-    - assets/image/kabah.png
-    - assets/image/user.png
-    - assets/image/back1.png
-    - assets/image/back2.png
+    - assets/images/kabah.png
+    - assets/images/user.png
+    - assets/images/back1.png
+    - assets/images/back2.png
     - assets/images/profile-bi-img.png
     - assets/icons/brain.png
     - assets/icons/book.png
     - assets/icons/submissions.png
+    - assets/images/back-his-quran.png
+    - assets/images/quran-image.png
+    - assets/icons/search.png
+    - assets/icons/cover-id.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

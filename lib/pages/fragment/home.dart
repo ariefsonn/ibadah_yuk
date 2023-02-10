@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xffFBFBFB),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFFBFBFB)),
-        padding: EdgeInsets.only(right: 5, left: 5, top: 30, bottom: 74),
+        padding: EdgeInsets.only(right: 5, left: 5, top: 45, bottom: 74),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             border: Border.all(width: 1, color: Colors.grey),
                             borderRadius: BorderRadius.circular(11)),
-                        child: Image.asset('assets/image/kabah.png'),
+                        child: Image.asset('assets/images/kabah.png'),
                       ),
                       SizedBox(
                         width: 10,
