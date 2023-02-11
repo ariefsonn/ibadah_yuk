@@ -4,6 +4,7 @@ import 'package:ibadah_yuk/pages/fragment/profile.dart';
 import 'package:ibadah_yuk/pages/fragment/progress.dart';
 import 'package:ibadah_yuk/pages/fragment/quran.dart';
 import 'package:ibadah_yuk/pages/login.dart';
+import 'package:ibadah_yuk/pages/navbar.dart';
 import 'package:ibadah_yuk/pages/register.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: NavBar(),
     );
   }
 }

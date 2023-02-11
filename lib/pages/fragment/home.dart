@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xffFBFBFB),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFFBFBFB)),
-        padding: EdgeInsets.only(right: 5, left: 5, top: 45, bottom: 74),
+        padding: EdgeInsets.only(right: 5, left: 5, top: 45, bottom: 10),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
