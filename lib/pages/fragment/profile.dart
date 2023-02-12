@@ -14,6 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          height: 900,
           decoration: const BoxDecoration(
             color: Color(0xFFFBFBFB),
           ),
@@ -120,7 +121,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 width: 345,
                 height: 113,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(

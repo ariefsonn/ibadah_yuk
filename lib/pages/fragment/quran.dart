@@ -37,7 +37,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
           color: Color(0xFFFBFBFB),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, top: 48),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 48),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -71,7 +71,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
                     const SizedBox(width: 14),
                     Container(
                       padding: const EdgeInsets.only(top: 25,),
-                      child: const Column(
+                      child:  Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -284,7 +284,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
                                 width: 180,
                                 child: Container(
                                   margin: const EdgeInsets.only(top: 5),
-                                  child: const Column(
+                                  child:  Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
@@ -311,7 +311,7 @@ class _QuranPageState extends State<QuranPage> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              const Row(
+                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(

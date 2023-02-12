@@ -78,7 +78,7 @@ Row(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                    image: AssetImage("assets/images/back2.png"),
+                    image: AssetImage("assets/image/back2.png"),
                     fit: BoxFit.fill,
                   )
               ),
@@ -174,7 +174,7 @@ Row(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
-                image: AssetImage("assets/images/back1.png"),
+                image: AssetImage("assets/image/back1.png"),
                 fit: BoxFit.fill,
               )
           ),

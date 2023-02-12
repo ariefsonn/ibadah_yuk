@@ -34,8 +34,10 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       body: _pageOptions.elementAt(_selectedIndex!),
       extendBody: true,
+
       bottomNavigationBar: FloatingNavbar(
-        width: 379,
+
+        width: 320,
         height: 93,
         iconSize: 28,
         items: [
@@ -59,11 +61,11 @@ class _NavBarState extends State<NavBar> {
         borderRadius: const BorderRadius.only(
           topRight: Radius.circular(15),
           topLeft: Radius.circular(15),
-          bottomLeft: Radius.circular(55),
-          bottomRight: Radius.circular(55)
+          bottomLeft: Radius.circular(15),
+          bottomRight: Radius.circular(15)
         ),
         padding: const EdgeInsets.only(bottom: 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001, top: 7),
-        margin: const EdgeInsets.symmetric(horizontal: 7, vertical: 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001),
+        margin: const EdgeInsets.symmetric(horizontal: 7, vertical: 20),
         currentIndex: _selectedIndex,
         onTap: onItemTapped,
       ),
