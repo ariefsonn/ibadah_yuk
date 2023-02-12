@@ -79,6 +79,12 @@ flutter:
     - assets/images/quran-image.png
     - assets/icons/search.png
     - assets/icons/cover-id.png
+    - assets/icons/back-icon.png
+    - assets/icons/youtube.png
+    - assets/icons/hafalan.png
+    - assets/icons/tilawah.png
+    - assets/icons/purple-check.png
+    - assets/icons/ratings.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
