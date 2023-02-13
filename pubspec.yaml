@@ -44,6 +44,8 @@ dependencies:
 #  flutter_svg: ^0.21.0-nullsafety.0
 #  geolocator: ^9.0.1
   sliding_up_panel: ^2.0.0+1
+  http: ^0.13.5
+  shared_preferences: ^2.0.17
 
 dev_dependencies:
   flutter_test:
@@ -71,30 +73,30 @@ flutter:
   assets:
     - assets/icons/apple.png
     - assets/icons/google.png
-    - assets/image/kabah.png
-    - assets/image/user.png
-    - assets/image/back1.png
-    - assets/image/back2.png
+    - assets/images/kabah.png
+    - assets/images/user.png
+    - assets/images/back1.png
+    - assets/images/back2.png
     - assets/images/profile-bi-img.png
     - assets/icons/brain.png
     - assets/icons/book.png
     - assets/icons/submissions.png
-    - assets/image/coursesback.png
-    - assets/image/fire.png
-    - assets/image/articles.png
-    - assets/image/elips.png
-    - assets/image/explore1.png
-    - assets/image/explore2.png
-    - assets/image/explore3.png
-    - assets/image/categories1.png
-    - assets/image/categories2.png
+    - assets/images/coursesback.png
+    - assets/images/fire.png
+    - assets/images/articles.png
+    - assets/images/elips.png
+    - assets/images/explore1.png
+    - assets/images/explore2.png
+    - assets/images/explore3.png
+    - assets/images/categories1.png
+    - assets/images/categories2.png
     - assets/image/compass.svg
     - assets/image/needle.svg
-    - assets/image/back_button.png
-    - assets/image/articlesback.png
-    - assets/image/elips30.png
-    - assets/image/share.png
-    - assets/image/adihidayat.png
+    - assets/images/back_button.png
+    - assets/images/articlesback.png
+    - assets/images/elips30.png
+    - assets/images/share.png
+    - assets/images/adihidayat.png
     - assets/images/back-his-quran.png
     - assets/images/quran-image.png
     - assets/icons/search.png

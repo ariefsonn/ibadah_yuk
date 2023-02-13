@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ibadah_yuk/widgets/gradient_text.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'navbar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +16,48 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+
+  void saveSession(name, id) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("name", name);
+    await pref.setString('id', id);
+    await pref.setBool('is_login', true);
+
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => NavBar(),
+      ), (route) => false,
+    );
+  }
+
+  void checkLogin() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var islogin = pref.getBool("is_login");
+    if (islogin != null && islogin) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => NavBar(),
+        ), (route) => false,
+      );
+    }
+  }
+
+  @override
+  void initState() {
+    checkLogin();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                 filled: true,
                 fillColor: Colors.white,
               ),
+              controller: _email,
             ),
             const SizedBox(height: 12),
             const Text(
@@ -111,6 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                 fillColor: Colors.white,
               ),
               obscureText: true,
+              controller: _password,
             ),
             const SizedBox(height: 24),
             const Text(
@@ -128,7 +179,9 @@ class _LoginPageState extends State<LoginPage> {
               width: 343,
               height: 56,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _submit();
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF575DFB)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -206,4 +259,32 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  Future<void> _submit() async {
+    final response = await http.post(
+      Uri.parse('http://10.50.50.2:88/login.php'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8'
+      },
+      body: jsonEncode(<String, String>{
+        'email': _email.text,
+        'password': _password.text,
+      }),
+    );
+
+    debugPrint(_email.text);
+    debugPrint(_password.text);
+    debugPrint(response.headers.toString());
+    debugPrint(response.statusCode.toString());
+
+    if (response.statusCode == 200) {
+      var output = jsonDecode(response.body);
+      debugPrint(output);
+      saveSession(output['nama'], output['id']);
+    } else {
+      Exception('Failed to Create');
+    }
+  }
+
+
 }

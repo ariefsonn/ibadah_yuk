@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         body: SingleChildScrollView(
         child:
         Container(
-          height: 1068,
+          height: 1090,
             decoration: BoxDecoration(color: Color(0xFFFBFBFB)),
-            padding: EdgeInsets.only(right: 5, left: 5, top: 30),
+            padding: EdgeInsets.only(right: 5, left: 5, top: 50),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
                     Widget>[
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           decoration: BoxDecoration(
                               border: Border.all(width: 1, color: Colors.grey),
                               borderRadius: BorderRadius.circular(11)),
-                          child: Image.asset('assets/image/kabah.png'),
+                          child: Image.asset('assets/images/kabah.png'),
                         ),
                         SizedBox(
                           width: 10,
@@ -366,7 +366,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                               Row(
                                                 children: [
                                                   Image.asset(
-                                                      'assets/image/fire.png'),
+                                                      'assets/images/fire.png'),
                                                   SizedBox(
                                                     width: 5,
                                                   ),
@@ -427,7 +427,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                             Row(
                                               children: <Widget>[
                                                 Image.asset(
-                                                    'assets/image/elips.png'),
+                                                    'assets/images/elips.png'),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -453,7 +453,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       ],
                                     ),
                                     ),
-                                    Image.asset('assets/image/articles.png')
+                                    Image.asset('assets/images/articles.png')
                                   ],
                                 ),
                               ),
@@ -486,7 +486,7 @@ SizedBox(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(50),
                                 image: DecorationImage(
-                                  image: AssetImage('assets/image/explore1.png')
+                                  image: AssetImage('assets/images/explore1.png')
                                 ),
 
                                   ),
@@ -510,7 +510,7 @@ SizedBox(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(50),
                                       image: DecorationImage(
-                                          image: AssetImage('assets/image/explore2.png')
+                                          image: AssetImage('assets/images/explore2.png')
                                       ),
 
                                     ),
@@ -534,7 +534,7 @@ SizedBox(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(50),
                                       image: DecorationImage(
-                                          image: AssetImage('assets/image/explore3.png')
+                                          image: AssetImage('assets/images/explore3.png')
                                       ),
 
                                     ),
@@ -558,7 +558,7 @@ SizedBox(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(50),
                                       image: DecorationImage(
-                                          image: AssetImage('assets/image/explore1.png')
+                                          image: AssetImage('assets/images/explore1.png')
                                       ),
 
                                     ),
@@ -596,7 +596,7 @@ SizedBox(
                                 borderRadius: BorderRadius.circular(15),
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      "assets/image/coursesback.png"),
+                                      "assets/images/coursesback.png"),
                                   fit: BoxFit.fill,
                                 )),
                             child: Column(
@@ -604,7 +604,7 @@ SizedBox(
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Image.asset('assets/image/fire.png'),
+                                    Image.asset('assets/images/fire.png'),
                                     SizedBox(
                                       width: 5,
                                     ),
@@ -677,7 +677,7 @@ SizedBox(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(12),
                                           image: DecorationImage(
-                                              image: AssetImage('assets/image/categories1.png'),
+                                              image: AssetImage('assets/images/categories1.png'),
                                             fit: BoxFit.fill
                                           ),
 
@@ -705,7 +705,7 @@ SizedBox(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(12),
                                           image: DecorationImage(
-                                              image: AssetImage('assets/image/categories2.png'),
+                                              image: AssetImage('assets/images/categories2.png'),
                                               fit: BoxFit.fill
                                           ),
 
@@ -732,7 +732,7 @@ SizedBox(
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(12),
                                           image: DecorationImage(
-                                              image: AssetImage('assets/image/categories1.png'),
+                                              image: AssetImage('assets/images/categories1.png'),
                                               fit: BoxFit.fill
                                           ),
 
