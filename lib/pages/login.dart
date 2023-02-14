@@ -25,11 +25,8 @@ class _LoginPageState extends State<LoginPage> {
     await pref.setString('id', id);
     await pref.setBool('is_login', true);
 
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (BuildContext context) => NavBar(),
-      ), (route) => false,
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => NavBar()),
     );
   }
 
@@ -180,7 +177,9 @@ class _LoginPageState extends State<LoginPage> {
               height: 56,
               child: ElevatedButton(
                 onPressed: () {
-                  _submit();
+                  setState(() {
+                    _submit();
+                  });
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF575DFB)),
@@ -272,14 +271,14 @@ class _LoginPageState extends State<LoginPage> {
       }),
     );
 
-    debugPrint(_email.text);
-    debugPrint(_password.text);
-    debugPrint(response.headers.toString());
-    debugPrint(response.statusCode.toString());
+    // debugPrint(_email.text);
+    // debugPrint(_password.text);
+    // debugPrint(response.headers.toString());
+    // debugPrint(response.statusCode.toString());
+    print(response.body);
 
     if (response.statusCode == 200) {
       var output = jsonDecode(response.body);
-      debugPrint(output);
       saveSession(output['nama'], output['id']);
     } else {
       Exception('Failed to Create');

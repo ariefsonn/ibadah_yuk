@@ -5,6 +5,8 @@ import 'package:ibadah_yuk/pages/fragment/home.dart';
 import 'package:ibadah_yuk/pages/fragment/profile.dart';
 import 'package:ibadah_yuk/pages/fragment/progress.dart';
 import 'package:ibadah_yuk/pages/fragment/quran.dart';
+import 'package:async/async.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -15,12 +17,25 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
 
+  var _name;
+
+  void setName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _name = prefs.getString('name') ?? '';
+  }
+
+  @override
+  void initState() {
+    setName();
+    super.initState();
+  }
+
   int? _selectedIndex = 0;
-  static const List<Widget> _pageOptions = <Widget>[
-    HomePage(),
+  late final List<Widget> _pageOptions = <Widget>[
+    HomePage(name: _name),
     QuranPage(),
     ProgressPage(),
-    ProfilePage(),
+    ProfilePage(name: _name),
   ];
 
   void onItemTapped(int index) {

@@ -4,20 +4,25 @@ import 'package:ibadah_yuk/widgets/home_content.dart';
 import 'package:hijri/digits_converter.dart';
 import 'package:hijri/hijri_array.dart';
 import 'package:hijri/hijri_calendar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:async/async.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key, required this.name}): super();
+  final String name;
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+
   @override
   var articles = Text(
     'articles',
     style: TextStyle(color: Colors.black, fontFamily: 'Euclid Circular B'),
   );
+
 
   var _today = HijriCalendar.now();
 
@@ -26,25 +31,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(
         backgroundColor: Color(0xffFBFBFB),
         body: SingleChildScrollView(
-        child:
-        Container(
-          height: 1090,
+        child: Container(
+            height: 1090,
             decoration: BoxDecoration(color: Color(0xFFFBFBFB)),
             padding: EdgeInsets.only(right: 5, left: 5, top: 50),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-                    Widget>[
-              Container(
-                padding: EdgeInsets.only(right: 20, left: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(right: 20, left: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          'Assalamualaikum  👋',
-                          style: TextStyle(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Assalamualaikum  👋',
+                              style: TextStyle(
                             fontFamily: 'Euclid Circular B',
                             fontSize: 14,
                             fontStyle: FontStyle.normal,
@@ -53,7 +57,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                         Text(
-                          'Raffi Nauval',
+                          widget.name,
                           style: TextStyle(
                               fontFamily: 'Euclid Circular B',
                               fontSize: 24,

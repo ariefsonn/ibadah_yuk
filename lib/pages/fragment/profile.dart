@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ibadah_yuk/widgets/drop_shadow.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:async/async.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key, required this.name}) : super();
+  final String name;
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -54,9 +57,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     const SizedBox(height: 19),
-                    const Text(
-                      'Aylmer Ariéfsonn',
-                      style: TextStyle(
+                    Text(
+                      widget.name,
+                      style: const TextStyle(
                         color: Color(0xFF252323),
                         fontFamily: 'Euclid Circular B',
                         fontStyle: FontStyle.normal,
