@@ -16,22 +16,28 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  late SharedPreferences pref;
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
-  void saveSession(name, id) async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setString("name", name);
-    await pref.setString('id', id);
-    await pref.setBool('is_login', true);
+  void saveSession(name, id, email, date) async {
+    Future<SharedPreferences> prefs = SharedPreferences.getInstance();
+    prefs.then((pref) {
+      pref.setString("name", name);
+      pref.setString('id', id);
+      pref.setString('email', email);
+      pref.setString('date', date);
+      pref.setBool('is_login', true);
+    });
 
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => NavBar()),
+        context, MaterialPageRoute(builder: (context) => const NavBar()),
     );
   }
 
   void checkLogin() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref = await SharedPreferences.getInstance();
     var islogin = pref.getBool("is_login");
     if (islogin != null && islogin) {
       Navigator.pushAndRemoveUntil(
@@ -279,7 +285,12 @@ class _LoginPageState extends State<LoginPage> {
 
     if (response.statusCode == 200) {
       var output = jsonDecode(response.body);
-      saveSession(output['nama'], output['id']);
+      saveSession(
+        output['nama'],
+        output['id'],
+        output['email'],
+        output['date'],
+      );
     } else {
       Exception('Failed to Create');
     }

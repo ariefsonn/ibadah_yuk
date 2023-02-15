@@ -17,31 +17,46 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
 
-  var _name;
+  late SharedPreferences prefs;
+  String? _name;
+  String? _email;
+  String? _date;
 
-  void setName() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    _name = prefs.getString('name') ?? '';
+
+  Future<void> setName() async {
+    prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _name = prefs.getString('name') ?? 'name';
+      _email = prefs.getString('email') ?? 'email';
+      _date = prefs.getString('date') ?? 'date';
+    });
   }
 
   @override
   void initState() {
     setName();
+    print(_name);
+    print(_name?.length);
     super.initState();
   }
 
   int? _selectedIndex = 0;
   late final List<Widget> _pageOptions = <Widget>[
-    HomePage(name: _name),
-    QuranPage(),
-    ProgressPage(),
-    ProfilePage(name: _name),
+    HomePage(name: _name!.toString()),
+    const QuranPage(),
+    const ProgressPage(),
+    ProfilePage(
+      name: _name!.toString(),
+      email: _email!.toString(),
+      date: _date!.toString(),
+    ),
   ];
 
-  void onItemTapped(int index) {
+  void onItemTapped(int index) async {
     setState(() {
       _selectedIndex = index;
     });
+    await setName();
   }
 
   @override
@@ -49,7 +64,6 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       body: _pageOptions.elementAt(_selectedIndex!),
       extendBody: true,
-
       bottomNavigationBar: FloatingNavbar(
 
         width: 320,

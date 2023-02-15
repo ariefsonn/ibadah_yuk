@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:ibadah_yuk/widgets/drop_shadow.dart';
+import 'package:ibadah_yuk/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:async/async.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key, required this.name}) : super();
+  const ProfilePage({super.key, required this.name, required this.email, required this.date}) : super();
   final String name;
+  final String email;
+  final String date;
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+  Future<void> logOut() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.clear();
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: 900,
+          height: 995,
           decoration: const BoxDecoration(
             color: Color(0xFFFBFBFB),
           ),
@@ -68,9 +79,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      '123456@gmail.com',
-                      style: TextStyle(
+                    Text(
+                      widget.email,
+                      style: const TextStyle(
                         color: Color(0xFFB1B0B0),
                         fontFamily: 'Euclid Circular B',
                         fontStyle: FontStyle.normal,
@@ -102,9 +113,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Color(0xFFB1B0B0),
                       ),
                     ),
-                    const Text(
-                      'Since Jule 2022',
-                      style: TextStyle(
+                    Text(
+                      'Since ${widget.date}',
+                      style: const TextStyle(
                         fontFamily: 'Euclid Circular B',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -127,7 +138,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Quran Completion Progress',
                       style: TextStyle(
                           fontFamily: 'Euclid Circular B',
@@ -136,10 +147,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 20
                       ),
                     ),
-                    SizedBox(height: 17),
+                    const SizedBox(height: 17),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Progress',
                           style: TextStyle(
@@ -162,8 +173,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 5),
-                    LinearProgressIndicator(
+                    const SizedBox(height: 5),
+                    const LinearProgressIndicator(
                       backgroundColor: Color(0xFFD9D9D9),
                       valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF9FB131)),
                       value: 90 / 100,
@@ -286,6 +297,36 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      logOut();
+                    });
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF952C2C)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                    ),
+                  ),
+                  child: const Text(
+                    'Logout',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontStyle: FontStyle.normal,
+                      fontFamily: 'Euclid Circular B',
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
