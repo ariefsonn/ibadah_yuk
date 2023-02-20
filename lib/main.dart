@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:ibadah_yuk/pages/article.dart';
 import 'package:ibadah_yuk/pages/navbar.dart';
 import 'package:ibadah_yuk/pages/course.dart';
 import 'package:ibadah_yuk/pages/fragment/home.dart';
@@ -13,12 +12,12 @@ import 'package:ibadah_yuk/pages/fragment/progress.dart';
 import 'package:ibadah_yuk/widgets/compass.dart';
 import 'package:ibadah_yuk/pages/fragment/home.dart';
 import 'package:ibadah_yuk/widgets/main_compass.dart';
-import 'package:ibadah_yuk/pages/quranic_course.dart';
+import 'package:ibadah_yuk/pages/detail_article.dart';
 import 'package:ibadah_yuk/pages/detail_mentor.dart';
 
 void main() {
   runApp(const MyApp());
-  HttpOverrides.global = MyHttpOverrides();
+
 }
 
 class MyApp extends StatelessWidget {
@@ -27,20 +26,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: DetailMentorPage(),
     );
   }
 }
 
-class MyHttpOverrides extends HttpOverrides{
-  @override
-  HttpClient createHttpClient(SecurityContext? context){
-    return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
-  }
-}
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});

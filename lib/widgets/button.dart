@@ -28,7 +28,7 @@ class SignUp extends StatelessWidget {
           text,
           style: TextStyle(
             color: Color(0xffffffff),
-            fontFamily: 'Euclid Circular B',
+            fontFamily: 'Inter',
             fontWeight: FontWeight.w700,
             fontSize: 16,
           ),

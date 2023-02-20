@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibadah_yuk/pages/fragment/home.dart';
 
 class CoursePage extends StatefulWidget {
   const CoursePage({Key? key}) : super(key: key);
@@ -36,8 +37,15 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  GestureDetector(
+                    onTap: (){  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  HomePage(name: '',)),
+                    );},
+                    child:
                   Image.asset('assets/icons/back-icon.png', width: 47, height: 93),
-                  const SizedBox(width: 80),
+                  ),
+                  const SizedBox(width: 70),
                   const Text(
                     'Quranic Course',
                     style: TextStyle(
@@ -51,7 +59,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
               ),
               const SizedBox(height: 18),
               Padding(
-                padding: const EdgeInsets.only(right: 24, left: 24),
+                padding: const EdgeInsets.only(right: 20, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -67,7 +75,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
                             fontSize: 20,
                           ),
                         ),
-                        const SizedBox(width: 40),
+                        const SizedBox(width: 34),
                         Container(
                           width: 97,
                           height: 36,
@@ -154,55 +162,11 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
                         },
                       ),
                     ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFF9F1F1),
-                        borderRadius: BorderRadius.all(Radius.circular(36)),
-                      ),
-                      width: 345,
-                      height: 29,
-                      child: TabBar(
-                        controller: controller,
-                        indicator: const BoxDecoration(
-                            color: Color(0xFFEFEEEE),
-                            borderRadius: BorderRadius.all(Radius.circular(36))
-                        ),
-                        labelColor: const Color(0xFF3F3939),
-                        tabs: [
-                          Tab(child: Text('Overview', style: ts)),
-                          Tab(child: Text('Mentor', style: ts)),
-                          Tab(child: Text('Descriptio', style: ts)),
-                        ],
-                      ),
-                    ),
+
+                    SizedBox(height: 20),
+
                     const SizedBox(height: 24),
-                    SizedBox(
-                      height: 91,
-                      child: TabBarView(
-                        controller: controller,
-                        children: [
-                          Container(
-                            width: 345,
-                            height: 91,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFFEBEB),
-                              borderRadius: BorderRadius.all(Radius.circular(36)),
-                            ),
-                            padding: const EdgeInsets.only(left: 12, top: 8.37, bottom: 11),
-                            child: Row(
-                              children: [
-                                ClipOval(
-                                  child: SizedBox.fromSize(
-                                    size: const Size.fromRadius(35), // Image radius
-                                    child: Image.network(
-                                      'https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/07/08/876774867.jpg',
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+
                           Container(
                             width: 345,
                             height: 91,
@@ -225,7 +189,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.only(left: 45, top: 50),
+                                      margin: const EdgeInsets.only(left: 45),
                                       child: Image.asset('assets/icons/purple-check.png'),
                                     ),
                                   ],
@@ -284,24 +248,16 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
                               ],
                             ),
                           ),
-                          Container(
-                            width: 345,
-                            height: 91,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFFEBEB),
-                              borderRadius: BorderRadius.all(Radius.circular(36)),
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
+
+          )
     );
+
   }
 }

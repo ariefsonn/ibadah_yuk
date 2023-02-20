@@ -23,7 +23,7 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return      Container(
-        padding: EdgeInsets.only(left: 25),
+
         child: SizedBox(
           height: 150,
           child: ListView(

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:ibadah_yuk/pages/fragment/home.dart';
+import 'package:ibadah_yuk/pages/navbar.dart';
 
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
-class QCoursePage extends StatefulWidget {
-  const QCoursePage({Key? key}) : super(key: key);
+class DetailArticlePage extends StatefulWidget {
+  const DetailArticlePage({Key? key}) : super(key: key);
 
   @override
-  State<QCoursePage> createState() => _QCoursePageState();
+  State<DetailArticlePage> createState() => _DetailArticlePageState();
 }
 
-class _QCoursePageState extends State<QCoursePage> {
+class _DetailArticlePageState extends State<DetailArticlePage> {
   PanelController _panelController = PanelController();
   @override
   void initState(){
@@ -31,7 +33,11 @@ class _QCoursePageState extends State<QCoursePage> {
           right: 20
         ),
         decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/image/articlesback.png'))
+          image: DecorationImage(image: AssetImage('assets/image/articlesback.png',
+
+          ),fit: BoxFit.cover
+          )
+
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +59,10 @@ class _QCoursePageState extends State<QCoursePage> {
               height: 80,
             ),
             GestureDetector(
-              onTap: (){},
+              onTap:  (){  Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const NavBar()),
+      );},
               child:       Image.asset('assets/image/back_button.png'),
             )
 
@@ -195,7 +204,31 @@ panelBuilder: (controller){
                       fontFamily: 'Euclid Circular B',
                       color: Color(0xff909090)
                     ),),
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('Menjaga harmoni kerukunan antar umat beragama sejatinya tergambar jelas di Kampung Sawah, Kota Bekasi. Toleransi jadi pondasi yang sudah ditanamkan sejak dini.',
+                  style: TextStyle(
+                      color: Color(0xff909090),
+                      fontFamily: 'Euclid Circular B',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14
+                  ),),
+                SizedBox(
+                  height: 20,
+                ),
+
+                Text('Jika ditilik dari segi positif, realitas Indonesia sebagai negara multikultural ini jelas menjadi potensi dan modal sosial serta kekayaan bangsa yang harus dengan telaten dirawat dan dijaga dengan baik.',
+                  style: TextStyle(
+                      color: Color(0xff909090),
+                      fontFamily: 'Euclid Circular B',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14
+                  ),),
+                SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           );

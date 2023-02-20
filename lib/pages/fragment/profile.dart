@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibadah_yuk/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key, required this.name, required this.email, required this.date}) : super();
@@ -147,10 +148,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 20
                       ),
                     ),
-                    const SizedBox(height: 17),
+                    SizedBox(height: 17),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Progress',
                           style: TextStyle(
@@ -173,8 +174,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 5),
-                    const LinearProgressIndicator(
+                    SizedBox(height: 5),
+                    LinearProgressIndicator(
                       backgroundColor: Color(0xFFD9D9D9),
                       valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF9FB131)),
                       value: 90 / 100,
@@ -303,29 +304,46 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
-                height: 50,
+                height: 66,
                 child: ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      logOut();
-                    });
+                    AwesomeDialog(
+                      context: context,
+                      dialogType: DialogType.warning,
+                      headerAnimationLoop: false,
+                      animType: AnimType.topSlide,
+                      showCloseIcon: true,
+
+                      title: 'Logout your account?',
+                      titleTextStyle: TextStyle(
+                        fontFamily: 'Euclid Circular B',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20
+                      ),
+                      btnCancelOnPress: () {},
+                      onDismissCallback: (type) {
+                        debugPrint('Dialog Dismiss from callback $type');
+                      },
+                      btnOkOnPress: () {},
+                    ).show();
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF952C2C)),
+                    backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFD9D9D9)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                        borderRadius: BorderRadius.all(Radius.circular(24)),
                       ),
                     ),
                   ),
                   child: const Text(
                     'Logout',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
+                      color: Color(0XFF952C2C),
+                      fontSize: 24,
                       fontStyle: FontStyle.normal,
                       fontFamily: 'Euclid Circular B',
                       fontWeight: FontWeight.w600,
+
                     ),
                   ),
                 ),

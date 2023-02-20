@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 
 class InputForm extends StatelessWidget {
   const InputForm({
-  super.key, required this.icon,
+  super.key, required this.icon, required this.controller,
 
   });
 
+  final TextEditingController controller;
   final Widget icon;
+
+
+
 
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       style: TextStyle(
           color: Colors.grey
       ),
-      keyboardType: TextInputType.number,
+
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(
             top: 15,
